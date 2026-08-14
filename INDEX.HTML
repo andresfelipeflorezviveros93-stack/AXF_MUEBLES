@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL - Muebles & Hogar</title>
+
+    <!-- Fuente Tipográfica Moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos FontAwesome para Redes Sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           VARIABLES Y RESETS (Estética Premium)
+           ========================================== */
+        :root {
+            --bg-dark: #0a0a0a;
+            --card-bg: #121212;
+            --gold-primary: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-hover: #E5C158;
+            --text-light: #F5F5F5;
+            --text-muted: #A0A0A0;
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --shadow-gold: rgba(212, 175, 55, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px 20px 20px;
+            background-image: radial-gradient(circle at 50% 0%, #1a160d 0%, var(--bg-dark) 70%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ==========================================
+           SECCIÓN LOGO / CABECERA
+           ========================================== */
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            width: 100%;
+        }
+
+        /* Espacio listo para colocar imagen de logo cuando lo tengas */
+        .logo-container {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Si usas imagen, descomenta y usa esta etiqueta dentro de .logo-container:
+        .logo-img {
+            max-width: 120px;
+            height: auto;
+            filter: drop-shadow(0 0 8px var(--shadow-gold));
+        } 
+        */
+
+        .brand-title {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .brand-subtitle {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* ==========================================
+           CONTENEDOR DE ENLACES
+           ========================================== */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-gold);
+            background: var(--card-bg);
+            color: var(--text-light);
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+            position: absolute;
+            left: 20px;
+            color: var(--gold-primary);
+            transition: color 0.3s ease;
+        }
+
+        /* Botón Principal (Catálogo) */
+        .btn-featured {
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-hover) 100%);
+            color: #000;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 20px var(--shadow-gold);
+            margin-bottom: 8px;
+        }
+
+        .btn-featured .btn-text {
+            color: #000;
+        }
+
+        .btn-text {
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Efectos Hover & Focus */
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 6px 15px var(--shadow-gold);
+        }
+
+        .btn-featured:hover {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Brillo sutil al pasar cursor */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent,
+                rgba(255, 255, 255, 0.08),
+                transparent
+            );
+            transform: rotate(30deg);
+            transition: 0.8s;
+            opacity: 0;
+        }
+
+        .btn:hover::after {
+            opacity: 1;
+            left: 100%;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding-top: 20px;
+            width: 100%;
+            max-width: 480px;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <!-- Logo / AXF_MUEBLES -->
+        <header class="header">
+            <div class="logo-container">
+                <!-- Para poner el logo en imagen más adelante, reemplaza este <h1> por: -->
+                <!-- <img src="logo.png" alt="AL Logo" class="logo-img"> -->
+                <h1 class="brand-title">AL</h1>
+            </div>
+            <p class="brand-subtitle">Diseño, elegancia y confort para tu hogar</p>
+        </header>
+
+        <!-- Menú de Enlaces -->
+        <nav class="links-container">
+            <!-- Botón Principal: Catálogo PDF -->
+            <!-- Nota: Reemplaza "catalogo.pdf" con la ruta o URL de tu archivo PDF -->
+            <a href="catalogo.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-featured">
+                <span class="btn-text">🛋️ Catálogo AL</span>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/573105382013" target="_blank" rel="noopener noreferrer" class="btn">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="btn-text">WhatsApp</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/axf_muebles?utm_source=qr&igsh=MXBpaXU2aXlxa2Z1Zw==" target="_blank" rel="noopener noreferrer" class="btn">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="btn-text">Instagram</span>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@axf_muebles?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="btn">
+                <i class="fa-brands fa-tiktok"></i>
+                <span class="btn-text">TikTok</span>
+            </a>
+        </nav>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <p>© 2026 AL - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
