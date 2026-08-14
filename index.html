@@ -62,35 +62,25 @@
            ========================================== */
         .header {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             width: 100%;
         }
 
-        /* Espacio listo para colocar imagen de logo cuando lo tengas */
         .logo-container {
             margin-bottom: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
         }
 
-        /* Si usas imagen, descomenta y usa esta etiqueta dentro de .logo-container:
+        /* Control de tamaño del Logo */
         .logo-img {
-            max-width: 120px;
+            max-width: 140px; /* Tamaño optimizado para vista móvil y desktop */
+            width: 100%;
             height: auto;
-            filter: drop-shadow(0 0 8px var(--shadow-gold));
-        } 
-        */
-
-        .brand-title {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, #997A15 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            line-height: 1.1;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.25));
         }
 
         .brand-subtitle {
@@ -218,9 +208,7 @@
         <!-- Logo / AXF_MUEBLES -->
         <header class="header">
             <div class="logo-container">
-                <!-- Para poner el logo en imagen más adelante, reemplaza este <h1> por: -->
-                <!-- <img src="logo.png" alt="AL Logo" class="logo-img"> -->
-               <img src="logo.png" alt="AL Logo" class="logo-img">
+                <img src="logo.png" alt="AXF Muebles Logo" class="logo-img">
             </div>
             <p class="brand-subtitle">Diseño, elegancia y confort para tu hogar</p>
         </header>
@@ -228,7 +216,6 @@
         <!-- Menú de Enlaces -->
         <nav class="links-container">
             <!-- Botón Principal: Catálogo PDF -->
-            <!-- Nota: Reemplaza "catalogo.pdf" con la ruta o URL de tu archivo PDF -->
             <a href="catalogo.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-featured">
                 <span class="btn-text">🛋️ Catálogo AL</span>
             </a>
